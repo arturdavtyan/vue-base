@@ -6,8 +6,7 @@
         class="main-container__item left-box h-full main-container__image"></div>
 
       <div
-        class="main-container__item right-box h-full main-container__form p-4"
-        :class="{ 'full-width': mobileSize, ' pl-10': !mobileSize }">
+        class="main-container__item right-box h-full main-container__form p-4">
         <h1 class="pb-6">Register</h1>
         <form class="main-container__form w-full flex flex-wrap" @submit.prevent.stop>
           <div class="main-container__form-col col-1 p-3">
@@ -59,11 +58,11 @@
 </template>
 
 <script>
-import screenSize from '@/mixins/screenSize'
+// import screenSize from '@/mixins/screenSize'
 import { mapActions } from 'vuex'
 
 export default {
-  mixins: [screenSize],
+  // mixins: [screenSize],
   data () {
     return {
       payload: {
@@ -126,7 +125,7 @@ export default {
         flex-basis: 100%;
       }
       &.main-container__image {
-        background-image: url(../../../assets/images/register.png);
+        // background-image: url(../../../assets/images/register.png);
         background-size: contain;
         background-repeat: no-repeat;
       }

@@ -1,7 +1,7 @@
-import state from './State.js'
-import mutations from './Mutations.js'
-import actions from './Actions.js'
-import getters from './Getters.js'
+import state from './state.js'
+import mutations from './mutations.js'
+import actions from './actions.js'
+import getters from './getters.js'
 
 export default {
   namespaced: true,

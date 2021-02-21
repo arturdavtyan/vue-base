@@ -1,14 +1,13 @@
 <template>
-  <div class="main-container w-full h-screen relative">
+  <div>
     <div class="main-container__inner w-full flex absolute p-4">
       <div
-        v-if="!mobileSize"
         class="main-container__item h-full main-container__image"></div>
       <div
-        class="main-container__item h-full main-container__form p-4"
-        :class="{ 'full-width': mobileSize, ' pl-10': !mobileSize }">
+        class="main-container__item h-full main-container__form p-4">
         <h1 class="pb-6">Login</h1>
-        <form class="main-container__form" @submit.prevent>
+        <router-link to="/">To</router-link>
+        <!-- <form class="main-container__form" @submit.prevent>
           <primary-input
             class="pb-4"
             label="Username"
@@ -26,17 +25,17 @@
               <primary-button>Sign In</primary-button>
             </div>
           </div>
-        </form>
+        </form> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import screenSize from '@/mixins/screenSize'
+// import screenSize from '@/mixins/screenSize'
 
 export default {
-  mixins: [screenSize]
+  // mixins: [screenSize]
 }
 </script>
 
@@ -58,7 +57,7 @@ export default {
         flex-basis: 100%;
       }
       &.main-container__image {
-        background-image: url(../../../assets/images/login.png);
+        // background-image: url(../../../assets/images/login.png);
         background-size: contain;
         background-repeat: no-repeat;
       }
