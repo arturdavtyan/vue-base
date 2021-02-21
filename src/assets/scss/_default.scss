@@ -1,18 +1,26 @@
-@font-face {
-  font-family: Nunito;
-  src: url(../fonts/Nunito-Regular.ttf) format('truetype');
-  font-weight: normal;
-}
-
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: none;
   outline: none;
 }
 
-html {
-  font-size: 15px;
-  font-family: "Nunito";
-  color: #363636;
+html, body { height: 100%; line-height: $line-height; font-size: $font-size; }
+html, body, input, button, textarea { font-family: $font-family; }
+
+button { cursor: pointer; }
+a { text-decoration: none; }
+ul li { list-style: none; }
+
+#app {
+  min-height: 100%;
+  overflow: hidden;
 }
+
+.container {
+  max-width: $container-width;
+  padding: $container-padding;
+}
+
+[v-cloak] { display: none; }

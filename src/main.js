@@ -5,18 +5,16 @@ import App from './App.vue'
 import './assets/scss/main.scss'
 
 // Globally Registered Components
-import './utils/GlobalComponents'
+import './utils/globalComponents'
 
 // VeeValidate
-import VeeValidate from 'vee-validate'
+import './veeValidate'
 
 // Vue Router
 import router from './router'
 
 // Vuex store
 import store from './store'
-
-Vue.use(VeeValidate)
 
 Vue.config.productionTip = false
 

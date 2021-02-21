@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <router-view />
   </div>
 </template>
@@ -7,14 +7,17 @@
 <script>
 export default {
   created () {
-    this.ChangeWindowSize()
-    window.addEventListener('resize', this.ChangeWindowSize)
+    this.changeWindowSize()
+    window.addEventListener('resize', this.changeWindowSize)
+  },
+  beforeMount () {
+    document.querySelector('#loading-wrapper').style.display = 'none'
   },
   destroyed () {
-    window.removeEventListener('resize', this.ChangeWindowSize)
+    window.removeEventListener('resize', this.changeWindowSize)
   },
   methods: {
-    ChangeWindowSize () {
+    changeWindowSize () {
       this.$store.commit('General/WindowWidth', window.innerWidth)
     }
   }
