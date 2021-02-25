@@ -1,5 +1,5 @@
-// import textInput from './inputs/TextInput.vue'
+import primaryCheckbox from './primaryCheckbox/Index'
 
 export default [
-  // textInput,
+  primaryCheckbox
 ]

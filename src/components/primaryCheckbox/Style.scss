@@ -1,0 +1,46 @@
+.primary-checkbox {
+  $checkbox-size: 20px;
+  $checkbox-border-radius: 3px;
+
+  display: inline-flex;
+  align-items: center;
+
+  .primary-checkbox__checkbox {
+    position: relative;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid $primary  ;
+    border-radius: $checkbox-border-radius;
+    // overflow: hidden;
+    cursor: pointer;
+
+    &:checked {
+      border: none;
+      background-color: $primary;
+    }
+    &:checked::after {
+      // content: url('/check.svg');
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      // background-image: url(../../assets/svgs/check.svg);
+      // background-image: '../../assets/svgs/check.svg';
+      // background-image: url(https://www.flaticon.com/svg/vstatic/svg/16/16508.svg?token=exp=1614282643~hmac=cba22e4e36b58db8098fbd0d4f0cddc1);
+    }
+  }
+  .primary-checkbox__label {
+    margin-left: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &::selection {
+      background-color: transparent;
+    }
+  }
+}

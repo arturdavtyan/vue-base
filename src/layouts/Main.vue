@@ -12,6 +12,9 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quod eos recusandae eaque optio iure nulla odio? Autem quod maxime recusandae illo mollitia, repellendus eos doloribus atque alias voluptatem sapiente impedit adipisci consequatur eligendi quo? Enim voluptatem officia eius totam!</p>
     <router-link :to="{ name: 'login' }">To</router-link>
     <router-view />
+    <br>
+    <primary-checkbox label="Are you there ?" /><br>
+    <primary-checkbox />
   </div>
 </template>
 
