@@ -1,6 +1,11 @@
 <template>
   <div class="primary-checkbox">
-    <input type="checkbox" :id="checkboxId" class="primary-checkbox__checkbox" />
+    <input
+      type="checkbox"
+      :id="checkboxId"
+      class="primary-checkbox__checkbox"
+      :checked="value"
+      @change="$emit('input', $event.target.checked)" />
     <label
       v-if="label"
       :for="checkboxId"
@@ -15,6 +20,10 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+    value: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -24,5 +33,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './Style.scss';
+  @import './scss/style.scss';
 </style>

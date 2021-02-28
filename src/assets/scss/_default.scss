@@ -7,7 +7,7 @@
 }
 
 html, body { height: 100%; line-height: $line-height; font-size: $font-size; }
-html, body, input, button, textarea { font-family: $font-family; }
+html, body, input, button, textarea { font-family: $font-family; color: $text-primary; }
 
 button { cursor: pointer; }
 a { text-decoration: none; }
@@ -19,8 +19,15 @@ ul li { list-style: none; }
 }
 
 .container {
-  max-width: $container-width;
+  max-width: $container-width + px;
+  margin: 0 auto;
   padding: $container-padding;
 }
 
 [v-cloak] { display: none; }
+
+@media screen and (max-device-width: 1024px) {
+  *, *::before, *::after {
+    cursor: default !important;
+  }
+}
