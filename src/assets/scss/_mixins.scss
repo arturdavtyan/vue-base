@@ -1,0 +1,21 @@
+@mixin adaptive-value($property, $startSize, $minSize, $type: 3) {
+  $diff: $startSize - $minSize;
+
+  @if $type == 1 {
+    #{$property}: $startSize + px;
+    @media screen and (max-width: #{$container-width + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$diff} * ((100vw - 320px) / (#{$container-width - 320})))
+    }
+  }
+
+  @else if $type == 2 {
+    #{$property}: $startSize + px;
+    @media screen and (min-width: #{$container-width + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$diff} * ((100vw - 320px) / (#{$full-width - 320})))
+    }
+  }
+
+  @else {
+    #{$property}: calc(#{$minSize + px} + #{$diff} * ((100vw - 320px) / (#{$full-width - 320})))
+  }
+}

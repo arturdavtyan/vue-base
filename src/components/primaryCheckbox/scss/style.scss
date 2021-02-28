@@ -1,41 +1,51 @@
 .primary-checkbox {
   $checkbox-size: 20px;
   $checkbox-border-radius: 3px;
+  $checkbox-transition: 0.4s linear;
 
   display: inline-flex;
   align-items: center;
 
   .primary-checkbox__checkbox {
+    flex: 0 0 $checkbox-size;
     position: relative;
     width: $checkbox-size;
     height: $checkbox-size;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    border: 1px solid $primary  ;
+    border: 1px solid $primary;
     border-radius: $checkbox-border-radius;
-    // overflow: hidden;
+    transition: $checkbox-transition;
+    overflow: hidden;
     cursor: pointer;
 
     &:checked {
       border: none;
+      border: 1px solid $primary;
       background-color: $primary;
     }
     &:checked::after {
-      // content: url('/check.svg');
+      transform: scale(1);
+      opacity: 1;
+    }
+    &::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 10px;
-      height: 10px;
-      // background-image: url(../../assets/svgs/check.svg);
-      // background-image: '../../assets/svgs/check.svg';
-      // background-image: url(https://www.flaticon.com/svg/vstatic/svg/16/16508.svg?token=exp=1614282643~hmac=cba22e4e36b58db8098fbd0d4f0cddc1);
+      top: 50%;
+      left: 50%;
+      width: 53%;
+      height: 53%;
+      margin-top: -28%;
+      margin-left: -25%;
+      background-image: url('./svgs/check.svg');
+      transform: scale(4.4) translate(-100%, -70%) rotate(-45deg);
+      opacity: 0;
+      transition: $checkbox-transition;
     }
   }
   .primary-checkbox__label {
-    margin-left: 12px;
+    margin-left: 0.8rem;
     font-size: 1rem;
     cursor: pointer;
 
