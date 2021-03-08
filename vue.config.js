@@ -5,11 +5,19 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        // prependData: `@import "@/assets/scss/_variables.scss";`
         prependData: `@import "@/assets/scss/main.scss";`
       }
     }
   },
+  runtimeCompiler: true,
+  pluginOptions: {
+    i18n: {
+      locale: 'en',
+      fallbackLocale: 'en',
+      localeDir: 'i18n/locales',
+      enableInSFC: false
+    }
+  }
   // chainWebpack: (config) => {
   //   const svgRule = config.module.rule('svg')
     
