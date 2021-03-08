@@ -9,7 +9,7 @@
 html, body { height: 100%; line-height: $line-height; font-size: $font-size; }
 html, body, input, button, textarea { font-family: $font-family; color: $text-primary; }
 
-button { cursor: pointer; }
+button:not(:disabled):not(.disabled) { cursor: pointer; }
 a { text-decoration: none; }
 ul li { list-style: none; }
 
