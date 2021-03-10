@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import VueI18N from 'vue-i18n'
+import VueI18n from 'vue-i18n'
 
 import en from './locales/en.json'
 
-Vue.use(VueI18N)
+Vue.use(VueI18n)
 
-const i18n = new VueI18N({
+const i18n = new VueI18n({
   locale: process.env.VUE_APP_I18N_LOCALE || 'en',
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
   messages: { en },
@@ -60,7 +60,23 @@ const i18n = new VueI18N({
   },
   numberFormats: {
     en: {
-      currency: {}
+      currency: {
+        style: 'currency',
+        currency: 'USD'
+      }
+    },
+    ru: {
+      currency: {
+        style: 'currency',
+        currency: 'RUB'
+      }
+    },
+    am: {
+      currency: {
+        style: 'currency',
+        currency: 'AMD',
+        currencyDisplay: 'symbol'
+      }
     }
   }
 })
