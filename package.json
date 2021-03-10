@@ -47,10 +47,16 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "template-curly-spacing" : "off",
-      "indent": ["error", 2, {
-        "ignoredNodes": ["TemplateLiteral"]
-      }]
+      "template-curly-spacing": "off",
+      "indent": [
+        "error",
+        2,
+        {
+          "ignoredNodes": [
+            "TemplateLiteral"
+          ]
+        }
+      ]
     }
   },
   "browserslist": [

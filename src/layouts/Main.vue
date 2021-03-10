@@ -28,6 +28,7 @@
       <br />
       <p>{{ $d(Date.now()) }}</p>
       <p>{{ $d(new Date(), 'long') }}</p>
+      <p>{{ $n(1200, 'currency') }}</p>
 
       <div class="list-container">
         <ul>
