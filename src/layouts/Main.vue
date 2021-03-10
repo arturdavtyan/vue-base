@@ -19,6 +19,16 @@
       <primary-checkbox label="Are you there ?" v-model="check1" /><br>
       <primary-checkbox v-model="check2" />
 
+      <br />
+      <locale-switcher />
+      <br />
+      <br />
+
+      <p>{{ $tc('name', '12') }}</p>
+      <br />
+      <p>{{ $d(Date.now()) }}</p>
+      <p>{{ $d(new Date(), 'long') }}</p>
+
       <div class="list-container">
         <ul>
           <li class="list-item">Title 1</li>
@@ -65,6 +75,9 @@
 // })
 
 export default {
+  components: {
+    localeSwitcher: () => import('@/components/localeSwitcher/Index.vue')
+  },
   computed: {
     icon: () => require('@/assets/svgs/icon.svg')
   },
