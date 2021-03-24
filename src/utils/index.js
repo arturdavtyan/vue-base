@@ -17,4 +17,14 @@ const capitalize = value => {
     .join(' ')
 }
 
-export { isJSON, capitalize }
+const compose = (...fncs) => {
+  if (!fncs.length) return () => { throw new Error('Compose function must have minimum 1 argument') }
+
+  if (fncs.some(e => typeof e !== 'function')) return () => { throw new Error('Each argument must be function') }
+
+  return fncs.reduce((acc, f) => {
+    return (...args) => acc(f(...args))
+  })
+}
+
+export { isJSON, capitalize, compose }
