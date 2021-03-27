@@ -10,7 +10,9 @@ const isJSON = json => {
 const capitalize = value => {
   const valueStr = String(value)
 
-  return !valueStr.length ? '' : valueStr
+  if (!valueStr.length) return ''
+
+  return valueStr
     .toLowerCase()
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -18,9 +20,9 @@ const capitalize = value => {
 }
 
 const compose = (...fncs) => {
-  if (!fncs.length) return () => { throw new Error('Compose function must have minimum 1 argument') }
+  if (!fncs.length) throw new Error('Compose function must have minimum 1 argument')
 
-  if (fncs.some(e => typeof e !== 'function')) return () => { throw new Error('Each argument must be function') }
+  if (fncs.some(e => !(e instanceof Function))) throw new Error('Each argument must be function')
 
   return fncs.reduce((acc, f) => {
     return (...args) => acc(f(...args))
