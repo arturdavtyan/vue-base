@@ -5,16 +5,20 @@
 </template>
 
 <script>
+import { debounce } from '@/utils/'
+
 export default {
+  data () {
+    return {
+      debouncedChangeWindowSize: debounce(this.changeWindowSize, 120)
+    }
+  },
   created () {
     this.changeWindowSize()
-    window.addEventListener('resize', this.changeWindowSize)
+    window.addEventListener('resize', this.debouncedChangeWindowSize)
   },
-  beforeMount () {
-    document.querySelector('#loading-wrapper').style.display = 'none'
-  },
-  destroyed () {
-    window.removeEventListener('resize', this.changeWindowSize)
+  beforeDestroy () {
+    window.removeEventListener('resize', this.debouncedChangeWindowSize)
   },
   methods: {
     changeWindowSize () {
