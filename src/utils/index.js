@@ -1,4 +1,4 @@
-const isJSON = json => {
+export const isJSON = json => {
   try {
     JSON.parse(json)
     return true
@@ -7,24 +7,34 @@ const isJSON = json => {
   }
 }
 
-const capitalize = value => {
+export const capitalize = value => {
   const valueStr = String(value)
 
-  return !valueStr.length ? '' : valueStr
+  if (!valueStr.length) return ''
+
+  return valueStr
     .toLowerCase()
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
 }
 
-const compose = (...fncs) => {
-  if (!fncs.length) return () => { throw new Error('Compose function must have minimum 1 argument') }
+export const compose = (...fncs) => {
+  if (!fncs.length) throw new Error('Compose function must have minimum 1 argument')
 
-  if (fncs.some(e => typeof e !== 'function')) return () => { throw new Error('Each argument must be function') }
+  if (fncs.some(e => !(e instanceof Function))) throw new Error('Each argument must be function')
 
   return fncs.reduce((acc, f) => {
     return (...args) => acc(f(...args))
   })
 }
 
-export { isJSON, capitalize, compose }
+export const debounce = (fnc, ms) => {
+  let _timeoutId = null
+
+  return (...a) => {
+    if (_timeoutId) clearTimeout(_timeoutId)
+
+    _timeoutId = setTimeout(() => fnc(...a), ms)
+  }
+}
